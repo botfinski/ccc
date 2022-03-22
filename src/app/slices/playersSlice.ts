@@ -15,27 +15,20 @@ const initialState: PlayersState = {
   player4: ''
 };
 
-
 export const playersSlice = createSlice({
   name: 'players',
   initialState,
   reducers: {
-    changeInput1: (state, action: PayloadAction<string>) => {
-      state.player1 = action.payload;
-    },
-    changeInput2: (state, action: PayloadAction<string>) => {
-      state.player2 = action.payload;
-    },
-    changeInput3: (state, action: PayloadAction<string>) => {
-      state.player3 = action.payload;
-    },
-    changeInput4: (state, action: PayloadAction<string>) => {
-      state.player4 = action.payload;
-    },
+    setPlayersState: (state, action: PayloadAction<PlayersState>) => {
+      state.player1 = action.payload.player1
+      state.player2 = action.payload.player2
+      state.player3 = action.payload.player3
+      state.player4 = action.payload.player4
+    }
   }
 });
 
 export const selectPlayers = (state: RootState) => state.players;
 
-export const { changeInput1, changeInput2, changeInput3, changeInput4 } = playersSlice.actions;
+export const { setPlayersState } = playersSlice.actions;
 export default playersSlice.reducer;

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 // export const Content = styled.div`
 // `;
 
@@ -16,12 +15,12 @@ export const GoNext = styled(AppLink)`
   justify-self: center;
   align-self: center;
   background: transparent;
-  color: ${props => props.theme.textColor};;
-  border: 2px solid ${props => props.theme.textColor};;
+  color: ${props => props.theme.textColor};
+  border: 2px solid ${props => props.theme.textColor};
   text-transform: uppercase;
   font-family: ${props => props.theme.typography.h1};
   font-size: 1.2em;
-  padding: .5em;
+  padding: 0.5em;
   text-align: center;
 `;
 
@@ -32,5 +31,5 @@ export const FormWrapper = styled.form`
 export const PlayerInput = styled.input`
   width: 100%;
   height: 50px;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 `;

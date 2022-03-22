@@ -5,17 +5,11 @@ import * as Styled from '../../components/styles';
 function TitleScren() {
   return (
     <Screen>
-      <Text variant='h1'>
-        Continue Journey
-      </Text>
+      <Text variant="h1">Continue Journey</Text>
 
-      <Text variant='h3'>
-        Empty
-      </Text>
+      <Text variant="h3">Empty</Text>
 
-      <Styled.GoNext to="/">
-          ⤜ Go back →
-      </Styled.GoNext>
+      <Styled.GoNext to="/">⤜ Go back →</Styled.GoNext>
     </Screen>
   );
 }

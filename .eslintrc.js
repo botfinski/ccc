@@ -1,48 +1,36 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
-    'node': true
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
   },
-  'extends': [
+  extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'plugin:prettier/recommended'
   ],
-  'parser': '@typescript-eslint/parser',
-  'parserOptions': {
-    'ecmaFeatures': {
-      'jsx': true
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
     },
-    'ecmaVersion': 'latest',
-    'sourceType': 'module'
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
-  'plugins': [
-    'react',
-    '@typescript-eslint',
-    'simple-import-sort'
-  ],
-  'rules': {
-    'indent': [
-      'error',
-      2
-    ],
-    'linebreak-style': [
-      'error',
-      'unix'
-    ],
-    'quotes': [
-      'error',
-      'single'
-    ],
-    'semi': [
-      'error',
-      'always'
-    ],
-    'object-curly-spacing': [
-      'error',
-      'always'
-    ],
-    'react/react-in-jsx-scope': 'off'
+  plugins: ['react', '@typescript-eslint', 'prettier', 'simple-import-sort'],
+  rules: {
+    indent: ['warn', 2],
+    'comma-dangle': ['error', 'only-multiline'],
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'single'],
+    'object-curly-spacing': ['error', 'always'],
+    'react/react-in-jsx-scope': 'off',
+    'no-multi-spaces': ['error'],
+    'prettier/prettier': [
+      0,
+      { semi: true, trailingComma: 'none', arrowParens: 'avoid' }
+    ]
   }
 };

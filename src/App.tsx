@@ -7,10 +7,10 @@ import TitleScren from './screens/TitleScreen/TitleScreen';
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<TitleScren />}/>
-      <Route path='/new-journey' element={<NewJourney />}/>
-      <Route path='/continue-journey' element={<ContinueJourney />}/>
-      <Route path='/pick-players' element={<PickPlayers />}/>
+      <Route path="/" element={<TitleScren />} />
+      <Route path="/new-journey" element={<NewJourney />} />
+      <Route path="/continue-journey" element={<ContinueJourney />} />
+      <Route path="/pick-players" element={<PickPlayers />} />
     </Routes>
   );
 }
