@@ -1,39 +1,41 @@
+import { useState } from 'react';
 import Screen from '../../components/Screen/Screen';
 import Text from '../../components/Text/Text';
 import * as Styled from '../../components/styles';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { setRuleset } from '../../app/slices/rulesetSlice';
+import { setRuleset, RulesetState, Rulesets, selectRuleset } from '../../app/slices/rulesetSlice';
 
 function NewJourney() {
+  const rulesetStore = useAppSelector(selectRuleset);
   const dispatch = useAppDispatch();
+  const [rulesetState, setRulesetState] = useState<RulesetState>(rulesetStore)
 
   return (
     <Screen>
       <Text variant="h1">New Journey</Text>
 
-      <Text variant="h3">Pick ruleset</Text>
-      {/* TODO - zrobić tu inputy zczytujace ilosc rulsetow z typu i sczytywanie z reduxa stanu zaznaczonego radio buttona -> potem to ustawic w dispachu */}
-      <div>
-        <input
-          type="radio"
-          id="default"
-          name="ruleset"
-          value="default"
-          defaultChecked
-        />
-        <label htmlFor="default">Default</label>
-      </div>
-      <br />
+      <Text variant="h3" textAlign='center'>Pick ruleset</Text>
 
-      <div>
-        <input type="radio" id="hard" name="ruleset" value="hard" disabled />
-        <label htmlFor="hard">Hard</label>
-      </div>
-      <br />
+      {
+        Rulesets.map(ruleset => {
+          return(
+            <label key={ruleset}>
+              <Styled.PlayerInputRadio
+                type="radio"
+                name="leader"
+                value={ruleset}
+                onChange={(e) => setRulesetState({ ...rulesetState, ruleset: e.target.value })}
+                defaultChecked={rulesetState.ruleset === ruleset}
+              />
+              {ruleset}
+            </label>
+          )
+        })
+      }
 
       <Styled.GoNext
         to="/pick-players"
-        onClick={() => dispatch(setRuleset('default'))}
+        onClick={() => dispatch(setRuleset(rulesetState.ruleset))}
       >
         ⤜ Next →
       </Styled.GoNext>

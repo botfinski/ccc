@@ -30,7 +30,8 @@ const H2 = styled.h2<PropStyles>`
 `;
 
 const H3 = styled.h3<PropStyles>`
-  margin: 0 0 0.5em;
+  width: 100%;
+  margin: 0 0 .5em;
   font-size: 1.5em;
   font-family: ${props => props.theme.typography.h2};
   font-weight: normal;
@@ -47,16 +48,16 @@ const P = styled.p<PropStyles>`
 
 const Text: React.FC<Props> = ({ variant, children, textAlign }) => {
   switch (variant) {
-    case 'h1':
-      return <H1>{children}</H1>;
-    case 'h2':
-      return <H2 textAlign={textAlign}>{children}</H2>;
-    case 'h3':
-      return <H3 textAlign={textAlign}>{children}</H3>;
-    case 'body':
-      return <P textAlign={textAlign}>{children}</P>;
-    default:
-      return <span>{children}</span>;
+  case 'h1':
+    return <H1>{children}</H1>;
+  case 'h2':
+    return <H2 textAlign={textAlign}>{children}</H2>;
+  case 'h3':
+    return <H3 textAlign={textAlign}>{children}</H3>;
+  case 'body':
+    return <P textAlign={textAlign}>{children}</P>;
+  default:
+    return <span>{children}</span>;
   }
 };
 

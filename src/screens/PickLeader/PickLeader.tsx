@@ -27,18 +27,18 @@ export default function PickLeader() {
       <Text variant="h1">Pick Leader</Text>
 
       {Object.entries(playersStore).map(player => {
-        const [key, val] = player
+        const [playerKey, playerVal] = player
 
         return (
-          val && <label key={key}>
+          playerVal && <label key={playerKey}>
             <Styled.PlayerInputRadio
               type="radio"
               name="leader"
-              value={val}
+              value={playerVal}
               onChange={e => handleLeaderSelect(e)}
-              checked={leaderState.leader === key}
+              checked={leaderState.leader === playerKey}
             />
-            {`${key}: ${val}`}
+            {`${playerKey}: ${playerVal}`}
           </label>
         )
       })}
