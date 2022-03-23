@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import rulesetSlice from './slices/rulesetSlice';
 import playersReducer from './slices/playersSlice';
+import leaderReducer from './slices/leaderSlice';
 
 export const store = configureStore({
   reducer: {
     ruleset: rulesetSlice,
-    players: playersReducer
+    players: playersReducer,
+    leader: leaderReducer
   }
 });
 

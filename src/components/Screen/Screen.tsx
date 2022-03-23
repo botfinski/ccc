@@ -29,12 +29,6 @@ const Screen: React.FC = ({ children }) => {
         {/* <Text variant="h1">Cursed City</Text>
         <Text variant="h2">Cursed City</Text>
         <Text variant="body">Cursed City</Text>
-
-
-
-        
-        
-        
         <Text>Cursed City</Text> */}
         {children}
       </ScreenWrapper>

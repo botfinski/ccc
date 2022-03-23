@@ -19,7 +19,7 @@ export const playersSlice = createSlice({
   name: 'players',
   initialState,
   reducers: {
-    setPlayersState: (state, action: PayloadAction<PlayersState>) => {
+    setPlayers: (state, action: PayloadAction<PlayersState>) => {
       state.player1 = action.payload.player1
       state.player2 = action.payload.player2
       state.player3 = action.payload.player3
@@ -30,5 +30,5 @@ export const playersSlice = createSlice({
 
 export const selectPlayers = (state: RootState) => state.players;
 
-export const { setPlayersState } = playersSlice.actions;
+export const { setPlayers } = playersSlice.actions;
 export default playersSlice.reducer;
