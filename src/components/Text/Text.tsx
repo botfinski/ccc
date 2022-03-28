@@ -46,6 +46,12 @@ const P = styled.p<PropStyles>`
   text-align: ${props => props.textAlign};
 `;
 
+const Span = styled.span<PropStyles>`
+  width: 100%;
+  color: ${props => props.theme.color};
+  text-align: ${props => props.textAlign};
+`;
+
 const Text: React.FC<Props> = ({ variant, children, textAlign }) => {
   switch (variant) {
     case 'h1':
@@ -57,7 +63,7 @@ const Text: React.FC<Props> = ({ variant, children, textAlign }) => {
     case 'body':
       return <P textAlign={textAlign}>{children}</P>;
     default:
-      return <span>{children}</span>;
+      return <Span textAlign={textAlign}>{children}</Span>;
   }
 };
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Text from './Text/Text';
 
 export const AppLink = styled(Link)`
   color: ${props => props.theme.textColor};
@@ -53,3 +54,37 @@ export const FlexContainer = styled.div`
   }
 `;
 
+export const Section = styled.div`
+  display: grid; 
+  grid-template-columns: auto .5fr;
+  grid-template-rows: 1fr .5fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "label checkbox"
+    "desc checkbox"; 
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 1em;
+  border: 2px solid ${props => props.theme.textColor};
+`;
+
+export const SectionLabel = styled.h2`
+  margin: 0 0 .5em;
+  font-family: ${props => props.theme.typography.h2};
+  font-weight: normal;
+  line-height: 1.3em;
+  grid-area: label;
+`;
+
+export const SectionDescription = styled.span`
+  grid-area: desc;
+`;
+export const SectionCheckboxLabel = styled.label`
+  grid-area: checkbox;
+  margin: auto;
+  text-align: center;
+
+  & > input {
+    margin-bottom: 0;
+  }
+`;

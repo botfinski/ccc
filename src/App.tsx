@@ -6,6 +6,7 @@ import TitleScren from './screens/TitleScreen/TitleScreen';
 import PickLeader from './screens/PickLeader/PickLeader';
 import PickJourneyType from './screens/PickJourneyType/PickJourneyType';
 import PickHeroes from './screens/PickHeroes/PickHeroes';
+import JourneySetup from './screens/JourneySetup/JourneySetup';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/pick-leader" element={<PickLeader />} />
       <Route path="/pick-journey-type" element={<PickJourneyType />} />
       <Route path="/pick-heroes" element={<PickHeroes />} />
+      <Route path="/journey-setup" element={<JourneySetup />} />
     </Routes>
   );
 }

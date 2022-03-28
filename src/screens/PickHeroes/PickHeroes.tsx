@@ -67,7 +67,7 @@ export default function PickHeroes() {
       </>}
 
       {selectedHeroesState.heroes.length === 4 && selectedHeroesState.initiativeTokens && <Styled.GoNext
-        to="/"
+        to="/journey-setup"
         onClick={() => goNext()}
       >⤜ Next →</Styled.GoNext>}
     </Screen>

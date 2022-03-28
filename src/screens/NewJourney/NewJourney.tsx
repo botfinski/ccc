@@ -5,7 +5,7 @@ import * as Styled from '../../components/styles';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { setRuleset, RulesetState, Rulesets, selectRuleset } from '../../app/slices/rulesetSlice';
 
-function NewJourney() {
+export default function NewJourney() {
   const rulesetStore = useAppSelector(selectRuleset);
   const dispatch = useAppDispatch();
   const [rulesetState, setRulesetState] = useState<RulesetState>(rulesetStore)
@@ -42,5 +42,3 @@ function NewJourney() {
     </Screen>
   );
 }
-
-export default NewJourney;
