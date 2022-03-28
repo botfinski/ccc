@@ -18,7 +18,7 @@ function NewJourney() {
 
       {
         Rulesets.map(ruleset => {
-          return(
+          return (
             <label key={ruleset}>
               <Styled.PlayerInputRadio
                 type="radio"

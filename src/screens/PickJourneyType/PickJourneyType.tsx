@@ -15,7 +15,7 @@ export default function PickJourneyType() {
       <Text variant="h1">Pick Journey Type</Text>
 
       {JourneyTypes.map(journeyType => {
-        return(
+        return (
           <label key={journeyType}>
             <Styled.PlayerInputRadio
               type="radio"
@@ -29,7 +29,7 @@ export default function PickJourneyType() {
           </label>
         )
       })}
-      
+
       {journeyTypeState.journeyType && <Styled.GoNext to="/pick-heroes" onClick={() => dispatch(setJourneyType(journeyTypeState.journeyType as keyof JourneyTypeState))}>⤜ Next →</Styled.GoNext>}
     </Screen>
   );

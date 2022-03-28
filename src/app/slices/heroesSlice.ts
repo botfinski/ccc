@@ -5,10 +5,12 @@ export const Heroes = ['jelsen', 'glaurio', 'cleona', 'brutogg', 'qulathis', 'em
 
 export interface HeroesState {
   heroes: string[];
+  initiativeTokens: boolean;
 }
 
 const initialState: HeroesState = {
-  heroes: []
+  heroes: [],
+  initiativeTokens: false
 };
 
 export const heroesSlice = createSlice({
@@ -17,11 +19,14 @@ export const heroesSlice = createSlice({
   reducers: {
     setHeroes: (state, action: PayloadAction<string[]>) => {
       state.heroes = action.payload;
+    },
+    setInitiativeTokens: (state, action: PayloadAction<boolean>) => {
+      state.initiativeTokens = action.payload;
     }
   }
 });
 
 export const selectHeroes = (state: RootState) => state.heroes;
 
-export const { setHeroes } = heroesSlice.actions;
+export const { setHeroes, setInitiativeTokens } = heroesSlice.actions;
 export default heroesSlice.reducer;

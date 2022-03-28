@@ -42,3 +42,14 @@ export const PlayerInputCheckbox = styled.input`
   height: 20px;
   margin-bottom: 3em;
 `;
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  & > * {
+    width: 50%;
+  }
+`;
+
