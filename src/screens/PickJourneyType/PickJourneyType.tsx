@@ -30,7 +30,7 @@ export default function PickJourneyType() {
         )
       })}
       
-      {journeyTypeState.journeyType && <Styled.GoNext to="/" onClick={() => dispatch(setJourneyType(journeyTypeState.journeyType as keyof JourneyTypeState))}>⤜ Next →</Styled.GoNext>}
+      {journeyTypeState.journeyType && <Styled.GoNext to="/pick-heroes" onClick={() => dispatch(setJourneyType(journeyTypeState.journeyType as keyof JourneyTypeState))}>⤜ Next →</Styled.GoNext>}
     </Screen>
   );
 }

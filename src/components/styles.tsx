@@ -36,3 +36,9 @@ export const PlayerInputRadio = styled.input`
   height: 50px;
   margin-bottom: 3em;
 `;
+
+export const PlayerInputCheckbox = styled.input`
+  width: 50px;
+  height: 20px;
+  margin-bottom: 3em;
+`;

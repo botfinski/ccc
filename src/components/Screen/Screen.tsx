@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 // import Text from '../Text/Text';
 
 const ScreenWrapper = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;

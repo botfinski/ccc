@@ -3,13 +3,15 @@ import rulesetSlice from './slices/rulesetSlice';
 import playersReducer from './slices/playersSlice';
 import leaderReducer from './slices/leaderSlice';
 import journeyTypeSlice from './slices/journeyTypeSlice';
+import heroesSlice from './slices/heroesSlice';
 
 export const store = configureStore({
   reducer: {
     ruleset: rulesetSlice,
     players: playersReducer,
     leader: leaderReducer,
-    journeyType: journeyTypeSlice
+    journeyType: journeyTypeSlice,
+    heroes: heroesSlice
   }
 });
 
