@@ -43,7 +43,7 @@ export default function PickLeader() {
         )
       })}
 
-      {leaderState.leader && <Styled.GoNext to="/" onClick={() => dispatch(setLeader(leaderState.leader as keyof LeaderState))}>⤜ Next →</Styled.GoNext>}
+      {leaderState.leader && <Styled.GoNext to="/pick-journey-type" onClick={() => dispatch(setLeader(leaderState.leader as keyof LeaderState))}>⤜ Next →</Styled.GoNext>}
     </Screen>
   );
 }
