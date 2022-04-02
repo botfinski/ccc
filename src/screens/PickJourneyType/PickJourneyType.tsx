@@ -14,7 +14,7 @@ export default function PickJourneyType() {
     <Screen>
       <Text variant="h1">Pick Journey Type</Text>
 
-      {JourneyTypes.map(journeyType => {
+      {Object.values(JourneyTypes).map(journeyType => {
         return (
           <label key={journeyType}>
             <Styled.PlayerInputRadio

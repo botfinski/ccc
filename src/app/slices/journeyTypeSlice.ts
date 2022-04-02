@@ -3,7 +3,12 @@ import { RootState } from '../../app/store';
 
 export type JourneyTypeTypes = 'hunt' | 'scavenge' | 'deliverance' | 'decapitation';
 
-export const JourneyTypes = ['hunt', 'scavenge', 'deliverance', 'decapitation']
+export enum JourneyTypes {
+  HUNT = 'hunt',
+  SCAVENGE = 'scavenge',
+  DELIVERANCE = 'deliverance',
+  DECAPITATION = 'decapitation'
+}
 
 export interface JourneyTypeState {
   journeyType: JourneyTypeTypes | string | undefined;

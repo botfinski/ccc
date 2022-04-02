@@ -3,6 +3,7 @@ import { useAppSelector } from '../../../app/hooks';
 import { selectJourneyType, JourneyTypes } from '../../../app/slices/journeyTypeSlice';
 import * as Styled from '../../../components/styles'
 import Text from '../../../components/Text/Text';
+import JourneySetup from '../../JourneySetup/JourneySetup';
 
 export const Phases = [
   {
@@ -34,7 +35,6 @@ export const Phases = [
 
 
 
-
 export const Phase0 = () => {
   const journeyType = useAppSelector(selectJourneyType).journeyType
 
@@ -52,7 +52,7 @@ export const Phase0 = () => {
       <Text variant="turnLeaderInfo">Quest step</Text>
 
       {
-        journeyType === 'hunt' ? <Text>Hunt journey - nothing happens</Text> : <Text>not hunt</Text>
+        journeyType === JourneyTypes.HUNT ? <Text>Hunt journey - nothing happens</Text> : <Text>not hunt</Text>
       }
 
     </Styled.BorderedSection>
