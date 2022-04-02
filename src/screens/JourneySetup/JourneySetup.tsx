@@ -1,14 +1,21 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import Screen from '../../components/Screen/Screen';
 import Text from '../../components/Text/Text';
 import * as Styled from '../../components/styles';
-// import { useAppSelector, useAppDispatch } from '../../app/hooks';
-// import { setRuleset, RulesetState, Rulesets, selectRuleset } from '../../app/slices/rulesetSlice';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { selectSetup, SetupState, setSkyVessel, setSkyDiscoveryDeck, setCombatMap, setEncounterCards } from '../../app/slices/setupSlice';
 
 export default function JourneySetup() {
-  // const rulesetStore = useAppSelector(selectRuleset);
-  // const dispatch = useAppDispatch();
-  // const [rulesetState, setRulesetState] = useState<RulesetState>(rulesetStore)
+  const setupStore = useAppSelector(selectSetup)
+  const dispatch = useAppDispatch();
+  const [setup, setSetup] = useState<SetupState>(setupStore)
+
+  const goNext = () => {
+    dispatch(setSkyVessel(setup.skyVessel))
+    dispatch(setSkyDiscoveryDeck(setup.discoveryDeck))
+    dispatch(setCombatMap(setup.combatMap))
+    dispatch(setEncounterCards(setup.encounterCards))
+  };
 
   return (
     <Screen>
@@ -26,9 +33,12 @@ export default function JourneySetup() {
         <Styled.SectionCheckboxLabel>
           <Styled.PlayerInputCheckbox
             type="checkbox"
-            name="skyvessel"
-          // onChange={}
-          // checked={selectedHeroesState.initiativeTokens}
+            name="skyVessel"
+            onChange={() => setSetup(prevState => ({
+              ...prevState,
+              skyVessel: !prevState.skyVessel
+            }))}
+            checked={setup.skyVessel}
           />
           <br />
           done
@@ -58,9 +68,12 @@ export default function JourneySetup() {
         <Styled.SectionCheckboxLabel>
           <Styled.PlayerInputCheckbox
             type="checkbox"
-            name="skyvessel"
-          // onChange={}
-          // checked={selectedHeroesState.initiativeTokens}
+            name="discoveryDeck"
+            onChange={() => setSetup(prevState => ({
+              ...prevState,
+              discoveryDeck: !prevState.discoveryDeck
+            }))}
+            checked={setup.discoveryDeck}
           />
           <br />
           done
@@ -80,9 +93,12 @@ export default function JourneySetup() {
         <Styled.SectionCheckboxLabel>
           <Styled.PlayerInputCheckbox
             type="checkbox"
-            name="skyvessel"
-          // onChange={}
-          // checked={selectedHeroesState.initiativeTokens}
+            name="combatMap"
+            onChange={() => setSetup(prevState => ({
+              ...prevState,
+              combatMap: !prevState.combatMap
+            }))}
+            checked={setup.combatMap}
           />
           <br />
           done
@@ -102,9 +118,12 @@ export default function JourneySetup() {
         <Styled.SectionCheckboxLabel>
           <Styled.PlayerInputCheckbox
             type="checkbox"
-            name="skyvessel"
-          // onChange={}
-          // checked={selectedHeroesState.initiativeTokens}
+            name="encounterCards"
+            onChange={() => setSetup(prevState => ({
+              ...prevState,
+              encounterCards: !prevState.encounterCards
+            }))}
+            checked={setup.encounterCards}
           />
           <br />
           done
@@ -112,12 +131,12 @@ export default function JourneySetup() {
       </Styled.Section>
 
 
-      {/* <Styled.GoNext
-        to="/pick-players"
-        onClick={() => dispatch(setRuleset(rulesetState.ruleset))}
+      {Object.values(setup).every(Boolean) && <Styled.GoNext
+        to="/the-turn"
+        onClick={() => goNext()}
       >
-        ⤜ Next →
-      </Styled.GoNext> */}
+        ⤜ Start Journey →
+      </Styled.GoNext>}
     </Screen>
   );
 }

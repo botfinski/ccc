@@ -44,10 +44,15 @@ export const PlayerInputCheckbox = styled.input`
   margin-bottom: 3em;
 `;
 
-export const FlexContainer = styled.div`
+interface PropStyles {
+  marginBottom?: string;
+}
+
+export const FlexContainer = styled.div<PropStyles>`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: ${props => props.marginBottom};
 
   & > * {
     width: 50%;
@@ -79,6 +84,7 @@ export const SectionLabel = styled.h2`
 export const SectionDescription = styled.span`
   grid-area: desc;
 `;
+
 export const SectionCheckboxLabel = styled.label`
   grid-area: checkbox;
   margin: auto;
@@ -87,4 +93,12 @@ export const SectionCheckboxLabel = styled.label`
   & > input {
     margin-bottom: 0;
   }
+`;
+
+
+export const BorderedSection = styled.div`
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 2px solid ${props => props.theme.textColor};
 `;

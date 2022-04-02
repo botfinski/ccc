@@ -1,24 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
+import { SaveData } from '../saveData';
 
-export const Heroes = ['jelsen', 'glaurio', 'cleona', 'brutogg', 'qulathis', 'emelda', 'dagnai', 'octren']
+export const Heroes = SaveData.heroes
 
 export interface HeroesState {
-  heroes: string[];
+  selectedHeroes: string[];
   initiativeTokens: boolean;
 }
 
 const initialState: HeroesState = {
-  heroes: [],
+  selectedHeroes: [],
   initiativeTokens: false
 };
 
 export const heroesSlice = createSlice({
-  name: 'heroes',
+  name: 'selectedHeroes',
   initialState,
   reducers: {
-    setHeroes: (state, action: PayloadAction<string[]>) => {
-      state.heroes = action.payload;
+    setSelectedHeroes: (state, action: PayloadAction<string[]>) => {
+      state.selectedHeroes = action.payload;
     },
     setInitiativeTokens: (state, action: PayloadAction<boolean>) => {
       state.initiativeTokens = action.payload;
@@ -26,7 +27,7 @@ export const heroesSlice = createSlice({
   }
 });
 
-export const selectHeroes = (state: RootState) => state.heroes;
+export const selectHeroes = (state: RootState) => state.selectedHeroes;
 
-export const { setHeroes, setInitiativeTokens } = heroesSlice.actions;
+export const { setSelectedHeroes, setInitiativeTokens } = heroesSlice.actions;
 export default heroesSlice.reducer;

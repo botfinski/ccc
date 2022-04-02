@@ -52,6 +52,22 @@ const Span = styled.span<PropStyles>`
   text-align: ${props => props.textAlign};
 `;
 
+const TurnLeaderInfo = styled.p<PropStyles>`
+  margin: 0 auto 1em;
+  font-size: 1.5em;
+  font-family: ${props => props.theme.typography.h1};
+  font-weight: normal;
+  text-align: ${props => props.textAlign};
+`;
+
+const PhaseTitle = styled.p<PropStyles>`
+  margin: 0 auto 1em;
+  font-size: 1.5em;
+  font-family: ${props => props.theme.typography.h2};
+  font-weight: normal;
+  text-align: ${props => props.textAlign};
+`;
+
 const Text: React.FC<Props> = ({ variant, children, textAlign }) => {
   switch (variant) {
     case 'h1':
@@ -60,8 +76,12 @@ const Text: React.FC<Props> = ({ variant, children, textAlign }) => {
       return <H2 textAlign={textAlign}>{children}</H2>;
     case 'h3':
       return <H3 textAlign={textAlign}>{children}</H3>;
+    case 'turnLeaderInfo':
+      return <TurnLeaderInfo textAlign={textAlign}>{children}</TurnLeaderInfo>;
     case 'body':
       return <P textAlign={textAlign}>{children}</P>;
+    case 'phaseTitle':
+      return <PhaseTitle textAlign={textAlign}>{children}</PhaseTitle>
     default:
       return <Span textAlign={textAlign}>{children}</Span>;
   }

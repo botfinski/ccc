@@ -4,9 +4,10 @@ import ContinueJourney from './screens/ContinueJourney/ContinueJourney';
 import PickPlayers from './screens/PickPlayers/PickPlayers';
 import TitleScren from './screens/TitleScreen/TitleScreen';
 import PickLeader from './screens/PickLeader/PickLeader';
-import PickJourneyType from './screens/PickJourneyType/PickJourneyType';
-import PickHeroes from './screens/PickHeroes/PickHeroes';
-import JourneySetup from './screens/JourneySetup/JourneySetup';
+import PickJourneyType from './screens/PickJourneyType/PickJourneyType'
+import PickHeroes from './screens/PickHeroes/PickHeroes'
+import JourneySetup from './screens/JourneySetup/JourneySetup'
+import Turn from './screens/Turn/Turn'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/pick-journey-type" element={<PickJourneyType />} />
       <Route path="/pick-heroes" element={<PickHeroes />} />
       <Route path="/journey-setup" element={<JourneySetup />} />
+      <Route path="/the-turn" element={<Turn />} />
     </Routes>
   );
 }

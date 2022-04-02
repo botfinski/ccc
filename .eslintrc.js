@@ -24,13 +24,13 @@ module.exports = {
     indent: ['warn', 2],
     'comma-dangle': ['error', 'only-multiline'],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
+    "quotes": [2, "single", { "avoidEscape": true }],
     'object-curly-spacing': ['error', 'always'],
     'react/react-in-jsx-scope': 'off',
     'no-multi-spaces': ['error'],
     'prettier/prettier': [
       0,
-      { semi: true, trailingComma: 'none', arrowParens: 'avoid' }
+      { singleQuote: true, semi: true, useTabs: false, trailingComma: 'none', arrowParens: 'avoid' }
     ]
   }
 };

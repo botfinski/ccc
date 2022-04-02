@@ -4,6 +4,7 @@ import playersReducer from './slices/playersSlice';
 import leaderReducer from './slices/leaderSlice';
 import journeyTypeSlice from './slices/journeyTypeSlice';
 import heroesSlice from './slices/heroesSlice';
+import setupSlice from './slices/setupSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
     players: playersReducer,
     leader: leaderReducer,
     journeyType: journeyTypeSlice,
-    heroes: heroesSlice
+    selectedHeroes: heroesSlice,
+    setup: setupSlice
   }
 });
 

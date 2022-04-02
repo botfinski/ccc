@@ -2,7 +2,7 @@ import Screen from '../../components/Screen/Screen';
 import Text from '../../components/Text/Text';
 import * as Styled from '../../components/styles';
 
-function TitleScren() {
+export default function TitleScren() {
   return (
     <Screen>
       <Text variant="h1">Cursed City</Text>
@@ -17,5 +17,3 @@ function TitleScren() {
     </Screen>
   );
 }
-
-export default TitleScren;

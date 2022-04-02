@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-// import Text from '../Text/Text';
 
 const ScreenWrapper = styled.div`
   min-height: 100vh;
@@ -26,10 +25,6 @@ const Screen: React.FC = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <ScreenWrapper>
-        {/* <Text variant="h1">Cursed City</Text>
-        <Text variant="h2">Cursed City</Text>
-        <Text variant="body">Cursed City</Text>
-        <Text>Cursed City</Text> */}
         {children}
       </ScreenWrapper>
     </ThemeProvider>

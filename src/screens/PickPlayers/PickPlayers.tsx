@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Screen from '../../components/Screen/Screen';
 import Text from '../../components/Text/Text';
 import * as Styled from '../../components/styles';
