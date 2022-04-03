@@ -19,8 +19,6 @@ export default function Turn() {
 
       {
         Phases.filter(phase => phase.id === currentPhase).map(phase => {
-          console.log(phase);
-
           switch (phase.id) {
             case 0:
               return <Phase0 key={phase.id} />
@@ -37,6 +35,8 @@ export default function Turn() {
           }
         })
       }
+
+      <button onClick={() => setCurrentPhase(currentPhase === 4 ? 0 : currentPhase + 1)} >next phase</button>
     </Screen>
   );
 }

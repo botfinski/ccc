@@ -33,7 +33,7 @@ export default function PickHeroes() {
     <Screen>
       <Text variant="h1">Pick Heroes</Text>
 
-      <Styled.FlexContainer marginBottom='100px'>
+      <Styled.FlexContainer marginBottom='50px'>
         {Heroes.filter(hero => !hero.isDead).map(hero => {
 
           return (
