@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Text from './Text/Text';
 
 export const AppLink = styled(Link)`
   color: ${props => props.theme.textColor};
@@ -41,7 +40,6 @@ export const PlayerInputRadio = styled.input`
 export const PlayerInputCheckbox = styled.input`
   width: 50px;
   height: 20px;
-  margin-bottom: 3em;
 `;
 
 interface PropStyles {
@@ -56,13 +54,13 @@ export const FlexContainer = styled.div<PropStyles>`
 
   & > * {
     width: 50%;
+    margin-bottom: 2em;
   }
 `;
 
 export const Section = styled.div`
   display: grid; 
-  grid-template-columns: auto .5fr;
-  grid-template-rows: 1fr .5fr;
+  grid-template-columns: 1fr .2fr;
   gap: 0px 0px; 
   grid-template-areas: 
     "label checkbox"
@@ -95,10 +93,15 @@ export const SectionCheckboxLabel = styled.label`
   }
 `;
 
-
 export const BorderedSection = styled.div`
   width: 100%;
   margin-bottom: 1em;
   padding: 1em;
   border: 2px solid ${props => props.theme.textColor};
 `;
+
+export const Select = styled.select`
+  max-width: 300px;
+  padding: 0.5em;
+  margin: 0.5em 0;
+`

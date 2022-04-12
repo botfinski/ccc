@@ -4,17 +4,28 @@ import Text from '../../components/Text/Text';
 import * as Styled from '../../components/styles';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { selectSetup, SetupState, setSkyVessel, setSkyDiscoveryDeck, setCombatMap, setEncounterCards } from '../../app/slices/setupSlice';
+import { JourneyTypes, selectJourneyType } from '../../app/slices/journeyTypeSlice';
+import { selectQuestCard } from '../../app/slices/questCardSlice';
+import { MapDataTypes, MapState, selectMap, setMap } from '../../app/slices/mapSlice';
+import { MapData } from '../../app/mapData';
 
 export default function JourneySetup() {
+  const dispatch = useAppDispatch()
+
   const setupStore = useAppSelector(selectSetup)
-  const dispatch = useAppDispatch();
+  const mapStore = useAppSelector(selectMap)
+  const { journeyType } = useAppSelector(selectJourneyType)
+  const { fear, influence, gravestones } = useAppSelector(selectQuestCard)
+
   const [setup, setSetup] = useState<SetupState>(setupStore)
+  const [localMap, setLocalMap] = useState<MapState>(mapStore)
 
   const goNext = () => {
     dispatch(setSkyVessel(setup.skyVessel))
     dispatch(setSkyDiscoveryDeck(setup.discoveryDeck))
     dispatch(setCombatMap(setup.combatMap))
     dispatch(setEncounterCards(setup.encounterCards))
+    dispatch(setMap(localMap.map))
   };
 
   return (
@@ -23,7 +34,7 @@ export default function JourneySetup() {
 
       <Styled.Section>
         <Styled.SectionLabel>
-          Setup Skyvessel Board
+          Setup The Skyvessel Board
         </Styled.SectionLabel>
 
         <Styled.SectionDescription>
@@ -47,22 +58,30 @@ export default function JourneySetup() {
 
       <Styled.Section>
         <Styled.SectionLabel>
-          Quest Card
+          Setup The Quest Card
         </Styled.SectionLabel>
 
         <Styled.SectionDescription>
-          Fear/Influence/Gravestones (load data)
+          <Text>{`Fear: ${fear}`}</Text><br/>
+          <Text>{`Influence: ${influence}`}</Text><br/>
+          <Text>Gravestones: {gravestones.length && <Text>boss</Text>}</Text>  
         </Styled.SectionDescription>
       </Styled.Section>
 
 
       <Styled.Section>
         <Styled.SectionLabel>
-          Build Discovery Deck
+          Build The Discovery Deck
         </Styled.SectionLabel>
 
         <Styled.SectionDescription>
-          Show here journey specific instructions
+          {journeyType === JourneyTypes.SCAVENGE ? 
+            (<Text>Scavenge journey - keep all cards</Text>) :
+            (<Text>Not Scavenge journey - remove realmstone cards from the deck:<br/> 2x value 1, 3x value 2, 2x value 3</Text>)
+          }
+          <br/>
+          <br/>
+          <Text>Shuffle and place the deck face down nearby</Text>
         </Styled.SectionDescription>
 
         <Styled.SectionCheckboxLabel>
@@ -85,10 +104,29 @@ export default function JourneySetup() {
           Prepare Combat Map
         </Styled.SectionLabel>
 
-        <Styled.SectionDescription>
-          Leader makes map roll (Destiny Dice)<br />
-          Map select dropdown
-        </Styled.SectionDescription>
+        {
+          journeyType !== JourneyTypes.DELIVERANCE ? <>
+            <Styled.SectionDescription>
+          Leader makes map roll (Destiny Dice)
+            </Styled.SectionDescription>
+
+            <Styled.Select 
+              onChange={(e) => setLocalMap({ map: e.target.value })}
+              defaultValue={localMap.map}
+            >
+              {MapData[journeyType as MapDataTypes].map(map => (
+                <option 
+                  key={map} 
+                  value={map}
+                >
+                  {map}
+                </option>
+              ))}
+            </Styled.Select>
+          </> : <Styled.SectionDescription>
+            Leader builds exploration deck
+          </Styled.SectionDescription>
+        }
 
         <Styled.SectionCheckboxLabel>
           <Styled.PlayerInputCheckbox

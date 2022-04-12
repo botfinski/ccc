@@ -5,6 +5,9 @@ import leaderReducer from './slices/leaderSlice';
 import journeyTypeSlice from './slices/journeyTypeSlice';
 import heroesSlice from './slices/heroesSlice';
 import setupSlice from './slices/setupSlice';
+import skyVesselSlice from './slices/skyVesselSlice';
+import questCardSlice from './slices/questCardSlice';
+import mapSlice from './slices/mapSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,7 +16,10 @@ export const store = configureStore({
     leader: leaderReducer,
     journeyType: journeyTypeSlice,
     selectedHeroes: heroesSlice,
-    setup: setupSlice
+    setup: setupSlice,
+    skyVessel: skyVesselSlice,
+    questCard: questCardSlice,
+    map: mapSlice
   }
 });
 

@@ -69,6 +69,7 @@ const PhaseTitle = styled.p<PropStyles>`
 `;
 
 const Text: React.FC<Props> = ({ variant, children, textAlign }) => {
+  /* eslint-disable indent */
   switch (variant) {
     case 'h1':
       return <H1>{children}</H1>;
@@ -84,6 +85,7 @@ const Text: React.FC<Props> = ({ variant, children, textAlign }) => {
       return <PhaseTitle textAlign={textAlign}>{children}</PhaseTitle>
     default:
       return <Span textAlign={textAlign}>{children}</Span>;
+  /* eslint-enable indent */
   }
 };
 

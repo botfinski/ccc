@@ -28,7 +28,7 @@ export const Phases = [
 ]
 
 export const Phase0 = () => {
-  const journeyType = useAppSelector(selectJourneyType).journeyType
+  const { journeyType } = useAppSelector(selectJourneyType)
 
   return (
     <Styled.BorderedSection>
@@ -42,7 +42,7 @@ export const Phase0 = () => {
       <Text variant="turnLeaderInfo">Quest step</Text>
 
       {
-        journeyType === JourneyTypes.HUNT ? <Text>Hunt journey - nothing happens</Text> : <Text>not hunt</Text>
+        journeyType === JourneyTypes.HUNT ? <Text>Hunt journey - nothing happens</Text> : <Text>{`Journey type: ${journeyType}`}</Text>
       }
     </Styled.BorderedSection>
   );
@@ -85,14 +85,19 @@ export const Phase2 = () => {
   );
 };
 
-export const Phase3 = () => {
+interface PhasesProps {
+  handleQuestToken: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export const Phase3: React.FC<PhasesProps> = ({ handleQuestToken }) => {
   return (
     <Styled.BorderedSection>
       <Text variant='phaseTitle' textAlign='center'>
         Activation Phase
       </Text>
 
-      <Text>Heroes and hostiles specific <br /> reactions <br /> inspiration roll</Text>
+      <Text>Heroes and hostiles specific <br /> reactions <br /> inspiration roll</Text><br/>
+      <button onClick={e => handleQuestToken(e as any)}>quest token + 1</button>
     </Styled.BorderedSection>
   );
 };

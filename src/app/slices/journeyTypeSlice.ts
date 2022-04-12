@@ -11,7 +11,7 @@ export enum JourneyTypes {
 }
 
 export interface JourneyTypeState {
-  journeyType: JourneyTypeTypes | string | undefined;
+  journeyType: JourneyTypeTypes | string;
 }
 
 const initialState: JourneyTypeState = {

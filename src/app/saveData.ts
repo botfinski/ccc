@@ -100,6 +100,6 @@ export const SaveData = {
   'quest': {
     'fear': 6,
     'influence': 4,
-    'gravestones': ''
+    'gravestones': []
   }
 }
