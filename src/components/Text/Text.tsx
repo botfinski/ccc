@@ -53,7 +53,7 @@ const Span = styled.span<PropStyles>`
 `;
 
 const TurnLeaderInfo = styled.p<PropStyles>`
-  margin: 0 auto 1em;
+  margin: 0 0 1em;
   font-size: 1.5em;
   font-family: ${props => props.theme.typography.h1};
   font-weight: normal;
@@ -85,7 +85,7 @@ const Text: React.FC<Props> = ({ variant, children, textAlign }) => {
       return <PhaseTitle textAlign={textAlign}>{children}</PhaseTitle>
     default:
       return <Span textAlign={textAlign}>{children}</Span>;
-  /* eslint-enable indent */
+    /* eslint-enable indent */
   }
 };
 

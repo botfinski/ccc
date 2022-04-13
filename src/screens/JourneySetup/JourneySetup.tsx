@@ -62,9 +62,9 @@ export default function JourneySetup() {
         </Styled.SectionLabel>
 
         <Styled.SectionDescription>
-          <Text>{`Fear: ${fear}`}</Text><br/>
-          <Text>{`Influence: ${influence}`}</Text><br/>
-          <Text>Gravestones: {gravestones.length && <Text>boss</Text>}</Text>  
+          <Text>{`Fear: ${fear}`}</Text><br />
+          <Text>{`Influence: ${influence}`}</Text><br />
+          <Text>Gravestones: {gravestones.length && <Text>boss</Text>}</Text>
         </Styled.SectionDescription>
       </Styled.Section>
 
@@ -75,12 +75,12 @@ export default function JourneySetup() {
         </Styled.SectionLabel>
 
         <Styled.SectionDescription>
-          {journeyType === JourneyTypes.SCAVENGE ? 
+          {journeyType === JourneyTypes.SCAVENGE ?
             (<Text>Scavenge journey - keep all cards</Text>) :
-            (<Text>Not Scavenge journey - remove realmstone cards from the deck:<br/> 2x value 1, 3x value 2, 2x value 3</Text>)
+            (<Text>Not Scavenge journey - remove realmstone cards from the deck:<br /> 2x value 1, 3x value 2, 2x value 3</Text>)
           }
-          <br/>
-          <br/>
+          <br />
+          <br />
           <Text>Shuffle and place the deck face down nearby</Text>
         </Styled.SectionDescription>
 
@@ -107,16 +107,16 @@ export default function JourneySetup() {
         {
           journeyType !== JourneyTypes.DELIVERANCE ? <>
             <Styled.SectionDescription>
-          Leader makes map roll (Destiny Dice)
+              Leader makes map roll (Destiny Dice)
             </Styled.SectionDescription>
 
-            <Styled.Select 
+            <Styled.Select
               onChange={(e) => setLocalMap({ map: e.target.value })}
               defaultValue={localMap.map}
             >
               {MapData[journeyType as MapDataTypes].map(map => (
-                <option 
-                  key={map} 
+                <option
+                  key={map}
                   value={map}
                 >
                   {map}

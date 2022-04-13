@@ -8,6 +8,10 @@ import PickJourneyType from './screens/PickJourneyType/PickJourneyType'
 import PickHeroes from './screens/PickHeroes/PickHeroes'
 import JourneySetup from './screens/JourneySetup/JourneySetup'
 import Turn from './screens/Turn/Turn'
+import JourneysEnd from './screens/JourneysEnd/JourneysEnd';
+import History from './screens/History/History';
+
+
 
 function App() {
   return (
@@ -21,6 +25,8 @@ function App() {
       <Route path="/pick-heroes" element={<PickHeroes />} />
       <Route path="/journey-setup" element={<JourneySetup />} />
       <Route path="/the-turn" element={<Turn />} />
+      <Route path="/history" element={<History />} />
+      <Route path="/journeys-end" element={<JourneysEnd />} />
     </Routes>
   );
 }

@@ -19,7 +19,7 @@ export default function Turn() {
     setCurrentPhase(currentPhase === 4 ? 0 : currentPhase + 1)
   }
 
-  const handleQuestToken: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+  const handleQuestToken: React.ChangeEventHandler<HTMLInputElement> = () => {
     setQuestToken(questToken + 1)
   }
 

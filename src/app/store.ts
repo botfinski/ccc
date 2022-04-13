@@ -8,6 +8,7 @@ import setupSlice from './slices/setupSlice';
 import skyVesselSlice from './slices/skyVesselSlice';
 import questCardSlice from './slices/questCardSlice';
 import mapSlice from './slices/mapSlice';
+import historySlice from './slices/historySlice';
 
 export const store = configureStore({
   reducer: {
@@ -19,7 +20,8 @@ export const store = configureStore({
     setup: setupSlice,
     skyVessel: skyVesselSlice,
     questCard: questCardSlice,
-    map: mapSlice
+    map: mapSlice,
+    history: historySlice
   }
 });
 

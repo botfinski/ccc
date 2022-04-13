@@ -7,7 +7,7 @@ export type QuestCardState = {
   gravestones: string[]
 }
 const initialState: QuestCardState = {
-  fear: 5, 
+  fear: 5,
   influence: 6,
   gravestones: []
 };

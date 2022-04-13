@@ -96,7 +96,7 @@ export const Phase3: React.FC<PhasesProps> = ({ handleQuestToken }) => {
         Activation Phase
       </Text>
 
-      <Text>Heroes and hostiles specific <br /> reactions <br /> inspiration roll</Text><br/>
+      <Text>Heroes and hostiles specific <br /> reactions <br /> inspiration roll</Text><br />
       <button onClick={e => handleQuestToken(e as any)}>quest token + 1</button>
     </Styled.BorderedSection>
   );

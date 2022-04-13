@@ -8,11 +8,15 @@ export default function TitleScren() {
       <Text variant="h1">Cursed City</Text>
 
       <Text variant="h2" textAlign="center">
-        <Styled.AppLink to="continue-journey">Continue Journey</Styled.AppLink>
+        <Styled.AppLink to="/continue-journey">Continue Journey</Styled.AppLink>
       </Text>
       <br />
       <Text variant="h2" textAlign="center">
-        <Styled.AppLink to="new-journey">New Journey</Styled.AppLink>
+        <Styled.AppLink to="/new-journey">New Journey</Styled.AppLink>
+      </Text>
+      <br />
+      <Text variant="h2" textAlign="center">
+        <Styled.AppLink to="/history">History</Styled.AppLink>
       </Text>
     </Screen>
   );

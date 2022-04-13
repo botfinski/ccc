@@ -21,6 +21,10 @@ export const GoNext = styled(AppLink)`
   text-align: center;
 `;
 
+export const GoBack = styled(GoNext)`
+  margin-top: 0;
+`
+
 export const FormWrapper = styled.form`
   width: 100%;
 `;

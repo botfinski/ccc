@@ -101,5 +101,13 @@ export const SaveData = {
     'fear': 6,
     'influence': 4,
     'gravestones': []
-  }
+  },
+  'history': [
+    {
+      'type': 'Hunt',
+      'map': 'Alleyways',
+      'count': 1,
+      'extractionEvent': 11
+    }
+  ]
 }
