@@ -18,6 +18,8 @@ export default function PickPlayers() {
     setPlayersState({ ...players, [e.target.name]: (e.target as HTMLInputElement).value })
   }
 
+  // todo - bug, po wpisaniu player3 i skasowaniu player2 player3 przechodzi dalej
+
   return (
     <Screen>
       <Text variant="h1">Pick Players</Text>

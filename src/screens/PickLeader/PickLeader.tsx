@@ -12,13 +12,12 @@ import { selectPlayers, PlayersState, selectPickedPlayers } from '../../app/slic
 
 export default function PickLeader() {
   const leaderStore = useAppSelector(selectLeader);
-  const playersStore = useAppSelector(selectPlayers);
   const pickedPlayersStore = useAppSelector(selectPickedPlayers);
   const dispatch = useAppDispatch();
   const [leaderState, setLeaderState] = useState<LeaderState>(leaderStore);
 
   const handleLeaderSelect: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    const selected = Object.keys(playersStore).find(key => playersStore[key as keyof PlayersState] === e.target.value)
+    const selected = Object.keys(pickedPlayersStore).find(key => pickedPlayersStore[key as keyof PlayersState] === e.target.value)
     setLeaderState({ ...leaderState, leader: selected })
   }
 
