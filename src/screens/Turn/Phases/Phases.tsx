@@ -85,11 +85,11 @@ export const Phase2 = () => {
   );
 };
 
-interface PhasesProps {
-  handleQuestToken: (event: React.ChangeEvent<HTMLInputElement>) => void
+interface Phase3Props {
+  handleQuestToken: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Phase3: React.FC<PhasesProps> = ({ handleQuestToken }) => {
+export const Phase3: React.FC<Phase3Props> = ({ handleQuestToken }) => {
   return (
     <Styled.BorderedSection>
       <Text variant='phaseTitle' textAlign='center'>
@@ -102,14 +102,24 @@ export const Phase3: React.FC<PhasesProps> = ({ handleQuestToken }) => {
   );
 };
 
-export const Phase4 = () => {
+interface Phase4Props {
+  handleNightfallToken: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const Phase4: React.FC<Phase4Props> = ({ handleNightfallToken }) => {
   return (
     <Styled.BorderedSection>
       <Text variant='phaseTitle' textAlign='center'>
         Event Phase
       </Text>
 
-      <Text>determine journey end <br /> all heroes dead? / all alive heroes in extraction zone = END <br /><br /> else CONTINUE</Text>
+      <Text>
+        determine journey end <br />
+        all heroes dead/out of action OR every hero NOT dead/out of action is in the extraction zone = journey ends<br />
+        <br />
+        If the journey continues the Leader makes a event roll /table p32/ nightfall + 1 button
+      </Text>
+      <button onClick={e => handleNightfallToken(e as any)}>nightfall token + 1</button>
     </Styled.BorderedSection>
   );
 };

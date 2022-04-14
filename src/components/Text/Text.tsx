@@ -47,6 +47,7 @@ const P = styled.p<PropStyles>`
 `;
 
 const Span = styled.span<PropStyles>`
+  display: block;
   width: 100%;
   color: ${props => props.theme.color};
   text-align: ${props => props.textAlign};

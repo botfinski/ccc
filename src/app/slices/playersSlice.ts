@@ -30,5 +30,7 @@ export const playersSlice = createSlice({
 
 export const selectPlayers = (state: RootState) => state.players;
 
+export const selectPickedPlayers = (state: RootState) => Object.fromEntries(Object.entries(state.players).filter(([key, value]) => value !== ''));
+
 export const { setPlayers } = playersSlice.actions;
 export default playersSlice.reducer;
