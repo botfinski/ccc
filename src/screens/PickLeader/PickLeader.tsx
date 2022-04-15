@@ -8,7 +8,7 @@ import {
   setLeader,
   LeaderState
 } from '../../app/slices/leaderSlice';
-import { selectPlayers, PlayersState, selectPickedPlayers } from '../../app/slices/playersSlice';
+import { PlayersState, selectPickedPlayers } from '../../app/slices/playersSlice';
 
 export default function PickLeader() {
   const leaderStore = useAppSelector(selectLeader);
