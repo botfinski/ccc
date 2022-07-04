@@ -150,7 +150,7 @@ export default function JourneySetup() {
         <Styled.SectionDescription>
           Place Combat Track<br />
           Shuffle and draw Encounter cards.<br />
-          Deploy hostiles
+          Deploy hostiles next to mysterious objects.
         </Styled.SectionDescription>
 
         <Styled.SectionCheckboxLabel>

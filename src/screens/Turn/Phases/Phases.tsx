@@ -48,7 +48,6 @@ export const Phase0 = () => {
   );
 };
 
-
 export const Phase1 = () => {
   return (
     <Styled.BorderedSection>
@@ -57,7 +56,7 @@ export const Phase1 = () => {
       </Text>
 
       <Text variant="turnLeaderInfo">Destiny roll</Text>
-      <Text>Remove all doubles, triples etc.</Text>
+      <Text>Remove all doubles, triples etc. OR apply event table rules</Text>
     </Styled.BorderedSection>
   );
 };
@@ -84,12 +83,13 @@ export const Phase2 = () => {
     </Styled.BorderedSection>
   );
 };
-
 interface Phase3Props {
   handleQuestToken: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  questToken: number;
+  max: number;
 }
 
-export const Phase3: React.FC<Phase3Props> = ({ handleQuestToken }) => {
+export const Phase3: React.FC<Phase3Props> = ({ handleQuestToken, questToken, max }) => {
   return (
     <Styled.BorderedSection>
       <Text variant='phaseTitle' textAlign='center'>
@@ -97,16 +97,17 @@ export const Phase3: React.FC<Phase3Props> = ({ handleQuestToken }) => {
       </Text>
 
       <Text>Heroes and hostiles specific <br /> reactions <br /> inspiration roll</Text><br />
-      <button onClick={e => handleQuestToken(e as any)}>quest token + 1</button>
+      <button onClick={e => handleQuestToken(e as any)} disabled={questToken >= max}>quest token + 1</button>
     </Styled.BorderedSection>
   );
 };
-
 interface Phase4Props {
   handleNightfallToken: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  nightfallToken: number;
+  max: number;
 }
 
-export const Phase4: React.FC<Phase4Props> = ({ handleNightfallToken }) => {
+export const Phase4: React.FC<Phase4Props> = ({ handleNightfallToken, nightfallToken, max }) => {
   return (
     <Styled.BorderedSection>
       <Text variant='phaseTitle' textAlign='center'>
@@ -119,7 +120,7 @@ export const Phase4: React.FC<Phase4Props> = ({ handleNightfallToken }) => {
         <br />
         If the journey continues the Leader makes a event roll /table p32/ nightfall + 1 button
       </Text>
-      <button onClick={e => handleNightfallToken(e as any)}>nightfall token + 1</button>
+      <button onClick={e => handleNightfallToken(e as any)} disabled={nightfallToken >= max}>nightfall token + 1</button>
     </Styled.BorderedSection>
   );
 };
