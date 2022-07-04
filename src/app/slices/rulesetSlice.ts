@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
-export type RulesetTypes = 'default' | 'hard';
+export type RulesetTypes = 'default' | 'hard' | 'the beast returns';
 
-export const Rulesets = ['default', 'hard']
+export const Rulesets = ['default', 'hard', 'the beast returns']
 
 export interface RulesetState {
   ruleset: RulesetTypes | string;
